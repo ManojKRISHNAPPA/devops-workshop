@@ -1,0 +1,4 @@
+The user is : root
+The home directory for root is /root
+The user is : root
+The home directory for root is /root

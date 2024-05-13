@@ -1,0 +1,19 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Get Server Details') {
+            steps {
+                script {
+                    // Memory details
+                    def memoryInfo = sh(script: 'free -h', returnStdout: true).trim()
+                    echo "Memory Details: ${memoryInfo}"
+                    
+                    // Disk details
+                    def diskInfo = sh(script: 'df -h', returnStdout: true).trim()
+                    echo "Disk Details: ${diskInfo}"
+                }
+            }
+        }
+    }
+}

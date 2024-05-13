@@ -2,21 +2,39 @@ pipeline {
     agent any
 
     stages {
-        stage('Get Server Details') {
+        stage('Hostname') {
             steps {
                 script {
                     // Hostname
                     def hostname = sh(script: 'hostname', returnStdout: true).trim()
                     echo "Hostname: ${hostname}"
-                    
+                }
+            }
+        }
+        
+        stage('Memory Details') {
+            steps {
+                script {
                     // Memory details
                     def memoryInfo = sh(script: 'free -h', returnStdout: true).trim()
                     echo "Memory Details:\n${memoryInfo}"
-                    
+                }
+            }
+        }
+        
+        stage('Disk Details') {
+            steps {
+                script {
                     // Disk details
                     def diskInfo = sh(script: 'df -h', returnStdout: true).trim()
                     echo "Disk Details:\n${diskInfo}"
-                    
+                }
+            }
+        }
+        
+        stage('Top Command Output') {
+            steps {
+                script {
                     // top command output
                     def topOutput = sh(script: 'top -n 1 -b', returnStdout: true).trim()
                     echo "Top Output:\n${topOutput}"

@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     stages {
-        stage('Hostname') {
+        stage('Hostname - Dev') {
             steps {
                 script {
                     // Hostname
@@ -12,7 +12,7 @@ pipeline {
             }
         }
         
-        stage('Memory Details') {
+        stage('Memory Details - Dev') {
             steps {
                 script {
                     // Memory details
@@ -22,7 +22,7 @@ pipeline {
             }
         }
         
-        stage('Disk Details') {
+        stage('Disk Details - Dev') {
             steps {
                 script {
                     // Disk details
@@ -32,7 +32,7 @@ pipeline {
             }
         }
         
-        stage('Top Command Output') {
+        stage('Top Command Output - Dev') {
             steps {
                 script {
                     // top command output

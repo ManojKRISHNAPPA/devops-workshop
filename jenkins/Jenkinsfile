@@ -33,7 +33,7 @@ pipeline{
         stage('top'){
             steps{
                 sh '''
-                top 
+                    top 
                 '''
             }
         }

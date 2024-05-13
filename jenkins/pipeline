@@ -5,15 +5,21 @@ pipeline {
         stage('Get Server Details') {
             steps {
                 script {
+                    // Hostname
+                    def hostname = sh(script: 'hostname', returnStdout: true).trim()
+                    echo "Hostname: ${hostname}"
+                    
                     // Memory details
                     def memoryInfo = sh(script: 'free -h', returnStdout: true).trim()
-                    echo "Memory Details: ${memoryInfo}"
+                    echo "Memory Details:\n${memoryInfo}"
                     
                     // Disk details
                     def diskInfo = sh(script: 'df -h', returnStdout: true).trim()
-                    echo "Disk Details: ${diskInfo}"
-
+                    echo "Disk Details:\n${diskInfo}"
                     
+                    // top command output
+                    def topOutput = sh(script: 'top -n 1 -b', returnStdout: true).trim()
+                    echo "Top Output:\n${topOutput}"
                 }
             }
         }

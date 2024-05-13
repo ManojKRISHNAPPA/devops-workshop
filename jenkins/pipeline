@@ -12,6 +12,8 @@ pipeline {
                     // Disk details
                     def diskInfo = sh(script: 'df -h', returnStdout: true).trim()
                     echo "Disk Details: ${diskInfo}"
+
+                    
                 }
             }
         }

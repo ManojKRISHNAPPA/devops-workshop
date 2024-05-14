@@ -1,0 +1,38 @@
+pipeline
+{
+    agent any
+    stages{
+        stage('Hostname')
+        {
+           steps{
+            sh '''
+            hostname
+            '''
+            } 
+        }
+        stage('ServerDetails')
+        {
+            steps{
+                sh '''
+                uname -a
+                '''
+            }
+        }
+        stage('MemoryDetails')
+        {
+            steps{
+                sh '''
+                free -h
+                '''
+            }
+        }
+        stage('DiskDetails')
+        {
+            steps{
+                sh '''
+                df -kh
+                '''
+            }
+        }
+    }
+}

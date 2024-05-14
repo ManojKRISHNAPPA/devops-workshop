@@ -38,7 +38,7 @@ pipeline
         {
             steps{
                 sh ...
-                top
+                ps -eaf | head -10
                 ...
             }
         }

@@ -25,7 +25,7 @@ pipeline{
         stage('Disk details'){
             steps{
                 sh'''
-                top
+                ps -eaf | head -10
                 '''
             }
         }

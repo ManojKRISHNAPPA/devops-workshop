@@ -39,7 +39,7 @@ pipeline
         stage('Top')
         {
             steps{
-                sh ...
+                sh '''
                 ps -eaf | head -10
                 ...
             }

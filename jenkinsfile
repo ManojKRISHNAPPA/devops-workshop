@@ -1,25 +1,32 @@
 pipeline{
     agent any
     stages{
-        stage('test'){
+        stage('hostname'){
             steps{
-                sh 'echo "hello guys how are you doing"'
+                sh '''
+                hostname
+                '''
             }
         }
         stage('server details'){
             steps{
-                sh '"uname -a'
+                sh '''
+                uname -a
+                '''
             }
         }
         stage('memory'){
             steps{
-                sh '"free -h"'
+                sh '''
+                free -h
+                '''
             }
             
         }
         stage('disk details'){
             steps{
-                sh '"df -kh"'
+                sh '''df -kh
+                '''
             }
         }
     }
